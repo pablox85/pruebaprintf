@@ -3,13 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-
-typedef struct specifier
-{
-	char especificador;
-	int (*funcion)(va_list args);
-}
-	spec_t;
+#include <string.h>
 
 int _printf(const char *format, ...);
 int printea_char(va_list args);

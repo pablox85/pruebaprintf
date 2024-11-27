@@ -64,7 +64,5 @@ int printea_enteros(va_list args)
 
 	longitud = snprintf(buffer, sizeof(buffer), "%d", n);
 	
-	return (write(1, buffer, len));
-
+	return (write(1, buffer, longitud));
 }
-

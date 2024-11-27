@@ -48,3 +48,5 @@ int printea_porcentaje(va_list args)
 	(void)args;
 	return (write(1, "%", 1));
 }
+
+

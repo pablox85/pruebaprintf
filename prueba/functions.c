@@ -57,12 +57,30 @@ int printea_porcentaje(va_list args)
 
 int printea_enteros(va_list args)
 {
+	int num = va_arg(args, int);
+	int conteo = 0, i = 0, i_2 = 0;
+	char string[20];
 
-	int n = va_arg(args, int);
-	char buffer[69];
-	int longitud;
-
-	longitud = snprintf(buffer, sizeof(buffer), "%d", n);
-	
-	return (write(1, buffer, longitud));
+	if (num == 0)
+	{
+		write(1, "0", 1);
+	}
+	if (num < 0)
+	{
+		write(1, "-", 1);
+		num = -num;
+		conteo++;
+	}
+		while (num > 0)
+		{
+			string[i] = (num % 10) + '0';
+			num /= 10;
+			i++;
+		}
+			for (i_2 = i - 1; i_2 >= 0; i_2--)
+			{
+				write(1, &string[i_2], 1);
+				conteo++;
+			}
+		return conteo;
 }

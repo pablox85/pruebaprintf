@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 				case 's':
 					contador += printea_string(args);
 					break;
+				case 'd':
+				case 'i':
+					contador += printea_enteros(args);
+					break;
 				default:
 					contador += write(1, "%", 1);
 					contador += write(1, &format[i], 1);

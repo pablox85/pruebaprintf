@@ -2,11 +2,11 @@
 
 <h2> <li>Printea string </li></h2>
 
-La funcion printea_string recorre una string hasta el carcter nulo (\0).
- 1 - Obtiene la cadena de texto de una lista de argumentos (va_arg)
- 2 - Si la cadena es null retorna -1 (indicador de erro)
- 3 - Imprime la cadena usando Write
- 4 - Cuenta el numero de caracteres y los retorna
+La funcion printea_string recorre una string hasta el carcter nulo (\0).<br>
+ 1 - Obtiene la cadena de texto de una lista de argumentos (va_arg).<br>
+ 2 - Si la cadena es null retorna -1 (indicador de erro).<br>
+ 3 - Imprime la cadena usando Write.<br>
+ 4 - Cuenta el numero de caracteres y los retorna.<br>
 <strong> Return: </strong> Devuelve el numero de caracteres impresos
 
 <h2><li> Printea char</h2></li>

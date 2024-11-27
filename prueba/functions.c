@@ -48,3 +48,23 @@ int printea_porcentaje(va_list args)
 	(void)args;
 	return (write(1, "%", 1));
 }
+
+/**
+ *printea_enteros- Convierte un entero en texto y lo imprime
+ *@args: lista de argumentos
+ *Return: Número de caracteres impresos o -1 en caso de erro
+ */
+
+int printea_enteros(va_list args)
+{
+
+	int n = va_arg(args, int);
+	char buffer[69];
+	int longitud;
+
+	longitud = snprintf(buffer, sizeof(buffer), "%d", n);
+	
+	return (write(1, buffer, len));
+
+}
+

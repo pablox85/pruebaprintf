@@ -28,7 +28,7 @@ int printea_string(va_list args)
 
 	if (string == NULL)
 	{
-		string = "(null)";
+		return(-1);
 	}
 		for (i = 0; string[i] != '\0'; i++)
 		{

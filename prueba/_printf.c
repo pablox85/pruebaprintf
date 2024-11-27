@@ -9,15 +9,15 @@
 
 int _printf(const char *format, ...)
 {
-
 	va_list args;
 	int i = 0, contador = 0;
 
 	if (format == NULL)
 		return (-1);
+
 	va_start(args, format);
 
-		while (format && format[i] != '\0')
+		while (format[i])
 		{
 			if (format[i] == '%')
 			{	i++;
@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 				case 's':
 					contador += printea_string(args);
 					break;
+				default:
+					contador += write(1, "%", 1);
+					contador += write(1, &format[i], 1);
+					break;
 				}
 			}
 			else
@@ -44,6 +48,6 @@ int _printf(const char *format, ...)
 
 			i++;
 		}
-	va_end (args):	
+	va_end (args);
 	return(contador);
 }

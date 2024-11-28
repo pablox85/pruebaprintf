@@ -2,8 +2,8 @@
 
 /**
  *printea_char- funcion que printea un caracter
- *@args: Lista de argumentos que contiene el carácte
- *Return: Número de caracteres impreso
+ *@args: Lista de argumentos
+ *Return: Número de caracteres impress
  */
 
 
@@ -17,8 +17,8 @@ int printea_char(va_list args)
 
 /**
  *printea_string- Imprime una cadena de texto
- *@args: Lista de argumentos que contiene el caráct
- *Return: Número de caracteres impreso
+ *@args: Lista de argumentos
+ *Return: Número de caracteres impress
  */
 
 int printea_string(va_list args)
@@ -28,19 +28,19 @@ int printea_string(va_list args)
 
 	if (string == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
 		for (i = 0; string[i] != '\0'; i++)
 		{
 			count += write(1, &string[i], 1);
 		}
-	return(count);
+	return (count);
 }
 
 /**
  *printea_porcentaje- Imprime el carácter'%'
  *@args: Lista de argumentos (no usado)
- *Return: Número de caracteres impreso
+ *Return: Número de caracteres impres "siempre 1 en este caso"
  */
 
 int printea_porcentaje(va_list args)
@@ -50,16 +50,16 @@ int printea_porcentaje(va_list args)
 }
 
 /**
- *printea_enteros- Convierte un entero en texto y lo imprime
+ *printea_enteros- Convierte un número entero en texto y lo imprime
  *@args: lista de argumentos
- *Return: Número de caracteres impresos o -1 en caso de erro
+ *Return: Número total de caracteres impresos, incluyendo el signo
  */
 
 int printea_enteros(va_list args)
 {
 	int num = va_arg(args, int);
 	int conteo = 0, i = 0, i_2 = 0;
-	char string[20];
+	char string[11];
 
 	if (num == 0)
 	{
@@ -82,5 +82,5 @@ int printea_enteros(va_list args)
 				write(1, &string[i_2], 1);
 				conteo++;
 			}
-		return conteo;
+		return (conteo);
 }

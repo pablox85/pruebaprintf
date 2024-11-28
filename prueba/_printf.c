@@ -4,49 +4,49 @@
  *
  *
  *
+ *
+ *
  */
-
 
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, contador = 0;
+	int i = 0, i_2 = 0;
+	int conteo = 0, c_prints = 0;
 
-	if (format == NULL)
-		return (-1);
-	va_start(args, format);
-		while (format[i])
+		if (format == NULL)
+			return (-1);
+		va_start(args, format);
+		while (format && format[i] != '\0')
 		{
 			if (format[i] == '%')
-			{	i++;
+			{
+				i++;
 				if (format[i] == '\0')
 					return (-1);
-				switch (format[i])
+				while (specs[i_2].especificador != '\0')
 				{
-				case 'c':
-					contador += printea_char(args);
-					break;
-				case '%':
-					contador += printea_porcentaje(args);
-					break;
-				case 's':
-					contador += printea_string(args);
-					break;
-				case 'd':
-				case 'i':
-					contador += printea_enteros(args);
-					break;
-				default:
-					contador += write(1, "%", 1);
-					contador += write(1, &format[i], 1);
-					break;
-			}	}
-			else
-			{
-				contador += write(1, &format[i], 1);
+					if (format[i] == specs[i_2].especificador)
+					{
+						c_prints = specs[i_2].funcion(args);
+						if (c_prints == -1)
+							return(-1);
+						conteo += c_prints;
+						break;
+					}
+						i_2++;
+				}
+
+				if (specs[i_2].especificador == '\0')
+				{
+					conteo += write(1, &format[i - 1], 1);
+					conteo += write(1, &format[i], 1);
+				}
 			}
+			else
+				conteo += write(1, &format[i], 1);
 			i++;
 		}
-	va_end (args);
-	return (contador);
+	va_end(args);
+	return(conteo);
 }

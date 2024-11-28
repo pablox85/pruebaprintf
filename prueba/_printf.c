@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- *
- *
- *
- *
- *
+ *_printf - Imprime texto según especificadores personalizado
+ *@format: Cadena de formato que contiene texto y especificadores
+ *Return: El número total de caracteres impreso
  */
 
 int _printf(const char *format, ...)
@@ -13,6 +11,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, i_2 = 0;
 	int conteo = 0, c_prints = 0;
+	const spec_t *specs = get_specs();
 
 		if (format == NULL)
 			return (-1);
@@ -29,14 +28,13 @@ int _printf(const char *format, ...)
 					if (format[i] == specs[i_2].especificador)
 					{
 						c_prints = specs[i_2].funcion(args);
-						if (c_prints == -1)
-							return(-1);
-						conteo += c_prints;
-						break;
+					if (c_prints == -1)
+						return (-1);
+					conteo += c_prints;
+					break;
 					}
 						i_2++;
 				}
-
 				if (specs[i_2].especificador == '\0')
 				{
 					conteo += write(1, &format[i - 1], 1);
@@ -48,5 +46,5 @@ int _printf(const char *format, ...)
 			i++;
 		}
 	va_end(args);
-	return(conteo);
+	return (conteo);
 }

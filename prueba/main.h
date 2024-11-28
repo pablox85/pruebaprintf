@@ -6,10 +6,16 @@
 #include <string.h>
 #include <stdio.h>
 
-typedef struct specifier
+/**
+ * struct spec- Estructura para asociar un especificador con una funció
+ *@especificador: Caracter que representa el especificador
+ *@funcion: Función asociada al especificador, que maneja su formato y salid
+ */
+
+typedef struct spec
 {
-    char especificador;
-    int (*funcion)(va_list);
+	char especificador;
+	int (*funcion)(va_list);
 } spec_t;
 
 int _printf(const char *format, ...);

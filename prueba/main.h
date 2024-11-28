@@ -15,11 +15,11 @@
 typedef struct spec
 {
 	char especificador;
-	int (*funcion)(va_list);
+	int (*funcion)(va_list args);
 } spec_t;
 
+spec_t *get_specs(void);
 int _printf(const char *format, ...);
-extern spec_t specs[];
 
 int printea_char(va_list args);
 int printea_string(va_list args);

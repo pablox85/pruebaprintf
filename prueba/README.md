@@ -46,6 +46,6 @@ It receives the integer number from an argument list <strong>(va_list args)</str
     <li><strong>printing_int:</strong> Processes and prints an integer, handling special cases for `0` and the minimum integer value. It decomposes positive integers into digits for printing and returns the total number of characters.</li>
     </ul>
     <hr>
-<div style="line-height: .3;">
+<div style="line-height: .1;">
     <h3>Authors:</h3> <h4>Brahian Amaral & Pablo Perez</h4>
 </div>

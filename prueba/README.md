@@ -16,6 +16,7 @@ y devuelve un valor de tipo <strong>(int)</strong>.
 Declaramos la variable <strong>char c</strong>asi almacenamos 1 char.<br>
 En <strong>c = va_arg(args, int)</strong> obtiene el argumento de la lista 
 y asume que es de tipo <strong>int.</strong>
+<hr>
 
 <h3><strong><li>printing_string</li></strong></h3>
 La funcion se encarga de imprimir una cadena de texto caracter por caracter

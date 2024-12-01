@@ -38,4 +38,14 @@ It receives the integer number from an argument list <strong>(va_list args)</str
     <li>Finally, it traverses the number, prints it, and returns the total number of characters printed.</li>
 </ul>
 <hr>
-<h2>Authors: Brahian Amaral & Pablo Perez</h2>
+<h2>To sum up</h2>
+<ul>
+    <li><strong>printing_char:</strong> Prints a single character passed via `va_list` and returns the number of characters printed.</li>
+    <li><strong>printing_string:</strong> Prints a string character by character, handling `NULL` strings by printing "(null)" and returning the number of characters printed.</li>
+    <li><strong>printing_percent:</strong> Prints a `%` symbol, ignores the argument, and returns `1` for the character printed.</li>
+    <li><strong>printing_int:</strong> Processes and prints an integer, handling special cases for `0` and the minimum integer value. It decomposes positive integers into digits for printing and returns the total number of characters.</li>
+    </ul>
+    <hr>
+<div style="line-height: .3;">
+    <h3>Authors:</h3> <h4>Brahian Amaral & Pablo Perez</h4>
+</div>

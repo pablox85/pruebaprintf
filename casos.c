@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 
-int especifico (va_lis args, char especifico)
+int especifico (va_list args, char especifico)
 {
 	int count = 0;
 	

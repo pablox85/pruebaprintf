@@ -8,5 +8,6 @@ int print_char (va_list args);
 int print_string (va_list args);
 int print_int (va_list args);
 int print_porciento (va_list args);
+int especifico (va_list args);
 int _putchar(char c);
 #endif

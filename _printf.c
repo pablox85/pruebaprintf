@@ -1,11 +1,11 @@
 #include "main.h"
-#include <stdarg.>
+#include <stdarg.h>
 /**
  * _printf - igual al printf
  * @format: arreglo de caracteres
  * Return: caracteres a imprimir
  */
-int _printf(const char *format)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = 0, count = 0;

@@ -1,11 +1,10 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include "main.h"
-
 int print_int(va_list arg)
 {
 	int d = va_arg(arg, int);
-	int digito[11], contador = 0, i = 0, is_negative = 0;
+	int digito[11], contador = 0, i = 0, negativo = 0;
 
 	if (d == 0)
 	{
@@ -17,11 +16,17 @@ int print_int(va_list arg)
 		write(1, "-", 1);
 		d = -d;
 
-		is_negative = 1;
+		negativo = 1;
 	}
 	while (d > 0)
 	{
-		digito[contador] = (d % 10) + '0';
+		digito[contador++] = (d % 10) + '0';
+			d /= 10;
 	}
-	return (contador + is_negative).
+	for (i = contador - 1; i >= 0; i--)
+	{
+		write(1, &digito[i], 1);
+	}
+
+	return (contador + negativo);
 }

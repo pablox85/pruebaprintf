@@ -8,38 +8,26 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, count = 0;
-
-	if (!format)
-		return (-1);
+	int count = 0;
+	int i;
 
 	va_start(args, format);
+	return (-1);
 
-	while (format[i])
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%' && format[i + 1] == '\0')
-		{
-			va_end(args);
-			return (-1);
-		}
-		else if (format[i] == '%' && format[i + 1])
+		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '%')
-			{
-				count += print_porciento(args);
-			}
-			else
-			{
-				count += especifico(args, format[i]);
-			}
+			count += especifico(args, format[i]);
 		}
 		else
 		{
-			count += write(1, &format[i], 1);
+			write(1, &format[i], 1);
+			count++;
 		}
-		i++;
 	}
-	va_end(args);
-	return (count);
+
+		va_end(args);
+		return (count);
 }
